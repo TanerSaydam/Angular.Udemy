@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog | Taner Saydam</title>
+    <style>
+        a{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a onclick="gotoHomePage()">Home</a>
+            </li>
+            <li>
+                <a onclick="gotoAboutPage()">About</a>
+            </li>
+            <li>
+                <a onclick="gotoContactPage()">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <app-root></app-root>
+
+    <script>
+        gotoHomePage();
+
+        function gotoHomePage(){
+            const el = document.querySelector("app-root");
+            if(el){
+                fetch("./home.html").then(res=> res.text()).then(data => {
+                    el.innerHTML = data
+                })                
+            }
+        }
+
+        function gotoAboutPage(){
+            const el = document.querySelector("app-root");
+            if(el){
+                el.innerHTML = `
+                <h1>About Page</h1>
+                `
+            }
+        }
+
+        function gotoContactPage(){
+            const el = document.querySelector("app-root");
+            if(el){
+                el.innerHTML = `
+                <h1>Contact Page</h1>
+                `
+            }
+        }
+    </script>
+</body>
+</html>
