@@ -13,4 +13,12 @@ import { ContactComponent } from './contact/contact.component';
 })
 export class AppComponent {
   helloWorld:string = "Hello, world from TS!!";
+
+  clickMe(){
+    alert("Beni tıkladın....")
+  }
+
+  changeHelloWorldVariable(event:any){
+    this.helloWorld = event.target.value;
+  }
 }
