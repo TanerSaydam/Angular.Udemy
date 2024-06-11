@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 })
 export class AppComponent {
   helloWorld:string = "Hello, world from TS!!";
+  pClassName: string = "blue";
 
   clickMe(){
     alert("Beni tıkladın....")
@@ -20,5 +21,9 @@ export class AppComponent {
 
   changeHelloWorldVariable(event:any){
     this.helloWorld = event.target.value;
+  }
+
+  setPElementClass(){
+    return "blue";
   }
 }
