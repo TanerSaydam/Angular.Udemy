@@ -1,4 +1,5 @@
 <h1>App Component. {{ helloWorld }}</h1>
 <button (click)="clickMe()">Beni Tıkla</button>
 <p [class]="setPElementClass()">Lorem ipsum dolor sit amet.</p>
-<input type="text" (keyup)="changeHelloWorldVariable($event)">
+<input type="text" [(ngModel)]="helloWorld">
+<textarea [(ngModel)]="helloWorld"></textarea>
