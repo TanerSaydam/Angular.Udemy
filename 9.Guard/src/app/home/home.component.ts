@@ -9,9 +9,13 @@ import { Router, RouterLink } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  name: string = "";
+  
   constructor(
     private router: Router
   ){}
+
+  checkStatus(){}
 
   logout(){
     //localStorage.clear();

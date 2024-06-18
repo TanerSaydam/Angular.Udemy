@@ -5,15 +5,17 @@ import { authGuard } from './auth.guard';
 import { LayoutsComponent } from './layouts/layouts.component';
 import { AuthService } from './auth.service';
 import { inject } from '@angular/core';
+import { checkGuard } from './check.guard';
 
 export const routes: Routes = [
     {
         path: "",
         component: LayoutsComponent,
-        canActivateChild: [() => inject(AuthService).isAuthenticated(), authGuard],
+       // canActivateChild: [() => inject(AuthService).isAuthenticated(), authGuard],
         children: [
             {
-                path: "",                
+                path: "",     
+                canDeactivate: [checkGuard],
                 component: HomeComponent
             },
             {
